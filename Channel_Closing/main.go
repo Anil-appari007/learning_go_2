@@ -33,4 +33,8 @@ func main() {
 	<-taskDone
 	_, ok := <-tasks
 	fmt.Println("Received more tasks", ok)
+
+	// IF data send to close channel
+	// program will panic
+	// tasks <- 333 // panic: send on closed channel
 }
