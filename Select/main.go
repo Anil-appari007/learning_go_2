@@ -1,13 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func addInt(ch chan int) {
 	ch <- 111
 }
 
 func addFloats(ch chan float64) {
-	ch <- 222.222
+	time.Sleep(3 * time.Second)
+	// ch <- 222.222
 }
 
 func main() {
