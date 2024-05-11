@@ -1,0 +1,7 @@
+{{range .}}
+{{if eq . "dev2"}}
+Access Blocked for User {{.}}
+{{else}}
+User {{.}} Logged In.
+{{end}}
+{{end}}
