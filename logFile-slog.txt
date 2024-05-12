@@ -1,0 +1,4 @@
+time=2024-05-12T16:07:31.104+05:30 level=INFO msg="Hello from slog3"
+time=2024-05-12T16:07:31.104+05:30 level=ERROR msg="Errorrrr from s3"
+time=2024-05-12T16:07:31.104+05:30 level=INFO msg="CUstom attr test" user=anilk
+anilk
