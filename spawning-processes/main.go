@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"os/exec"
+	"strings"
 )
 
 func checkErrAt(err error, at string) {
@@ -31,4 +33,22 @@ func main() {
 	d4O, err := d4.Output()
 	checkErrAt(err, "d4-o")
 	fmt.Println(string(d4O))
+
+	// m1Params := "-uroot -p -e SHOW DATABASES"
+
+	m1 := exec.Command("mysql", "-uroot", "-p", "-e", "SHOW DATABASES LIKE 'db%'")
+	m1O, err := m1.CombinedOutput()
+	fmt.Println(string(m1O))
+
+	m2Input, err := os.ReadFile("D:\\CODE_SAMPLEs\\Github\\learning_go_2\\spawning-processes\\data.sql")
+	checkErrAt(err, "m2Input")
+	fmt.Println(string(m2Input))
+
+	m2 := exec.Command("mysql", "-uroot", "-p", "-f")
+	// m2.Stdin = string(m2Input)
+	m2.Stdin = strings.NewReader(string(m2Input))
+	m2O, err := m2.CombinedOutput()
+	checkErrAt(err, "m2O")
+	fmt.Println(string(m2O))
+
 }
