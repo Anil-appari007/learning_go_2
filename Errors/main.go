@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func checkError(e error) {
 	if e != nil {
@@ -17,6 +19,7 @@ func foo() error {
 func bar() error {
 	return nil
 }
+
 func main() {
 	e := foo()
 	checkError(e)
