@@ -54,7 +54,7 @@ func worker(id int, toDo chan string, done chan string) {
 		log.Printf("Tasks completed by worker %v = %v\n", id, c)
 
 	}
-	log.Printf("")
+	log.Printf("Worker %v Exiting", id)
 }
 
 /*
