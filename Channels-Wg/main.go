@@ -24,6 +24,13 @@ func worker(id int, toDo chan string, done chan string) {
 }
 
 func main() {
+
+	/*
+		1. Create a function which will take 2 channels
+		2. Run function as go routine
+		3. Give input to chan-1
+		4. Send output from Function to Chan-2
+	*/
 	l := 30
 	fmt.Printf("Tasks Count: %v\n", l)
 	toDo := make(chan string, l)
