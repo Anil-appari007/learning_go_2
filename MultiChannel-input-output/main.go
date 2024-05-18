@@ -78,7 +78,7 @@ func main() {
 		3. Give input to chan-1
 		4. Send output from Function to Chan-2
 	*/
-	log.Println("Test")
+	log.Println("Program has started")
 	l := 30
 	log.Printf("Tasks Count: %v\n", l)
 	toDo := make(chan string, l)
