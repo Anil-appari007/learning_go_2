@@ -36,7 +36,9 @@ func main() {
 
 	m1Input, err := os.ReadFile("D:\\CODE_SAMPLES\\Github\\learning_go_2\\spawning-processes\\data.sql")
 	checkErrAt(err, "m1Input-ReadFile")
-	m1 := exec.Command("mysql", "-uroot", "-p", "-f")
+	dbPwd := os.Getenv("DB_PWD")
+	pwdString := fmt.Sprintf("-p%s", dbPwd)
+	m1 := exec.Command("mysql", "-uroot", pwdString, "-f")
 	m1.Stdin = strings.NewReader(string(m1Input))
 	m1O, err := m1.CombinedOutput()
 	checkErrAt(err, "m1O-CombinedOutput")
